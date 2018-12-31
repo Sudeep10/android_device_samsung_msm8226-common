@@ -67,9 +67,6 @@ ro.qc.sdk.izat.service_mask=0x0
 # IO Scheduler
 sys.io.scheduler=bfq
 
-# NFC
-ro.nfc.port=I2C
-
 # Radio
 
 ro.debug_level=0x4948
