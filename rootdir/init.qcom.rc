@@ -646,11 +646,6 @@ service rfs_access /system/bin/rfs_access
 service rmt_storage /system/bin/rmt_storage
     class core
     user root
-    disabled
-
-on property:ro.boot.emmc=true
-    start rfs_access
-    start rmt_storage
 
 service ril-fix /system/bin/sh /system/etc/init.ril.sh
    class main
