@@ -63,12 +63,18 @@ ro.qc.sdk.izat.service_mask=0x0
 sys.io.scheduler=bfq
 
 # Radio
+<<<<<<< HEAD
 
 ro.debug_level=0x4948
 
 # Perf
 ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
+=======
+# this prop is only for samsung
+# ro.debug_level=0x4948
+#####
+>>>>>>> 22b0dff... update for oreo stable mr1
 persist.data.netmgrd.qos.enable=true
 persist.data.qmi.adb_logmask=0
 persist.radio.add_power_save=1
