@@ -77,7 +77,6 @@ ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 >>>>>>> 22b0dff... update for oreo stable mr1
 persist.data.netmgrd.qos.enable=true
 persist.data.qmi.adb_logmask=0
-persist.radio.add_power_save=1
 rild.libpath=/system/vendor/lib/libsec-ril.so
 ro.telephony.mms_data_profile=5
 ro.ril.telephony.qan_resp_strings=6
