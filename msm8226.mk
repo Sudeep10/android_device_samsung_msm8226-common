@@ -33,8 +33,12 @@ TARGET_SCREEN_WIDTH := 720
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
+    android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
-    audio_policy.msm8974 \
+    android.hardware.audio.effect@2.0-service \
+    android.hardware.broadcastradio@1.0-impl \
+    android.hardware.soundtrigger@2.0-impl \
+    audio_policy.msm8226 \
     audio.a2dp.default \
     audio.primary.msm8226 \
     audio.r_submix.default \
@@ -52,7 +56,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     av.offload.enable=true
 
 PRODUCT_PACKAGES += \
-    libwvm_shim \
     imx175_shim
 
 # Camera
@@ -62,10 +65,7 @@ PRODUCT_PACKAGES += \
     libboringssl-compat \
     camera.msm8226 \
     libxml2 \
-    libshims_camera \
-    libshim_qcopt \
-    libshims_sensorlistener \
-    Camera2
+    Snap
 
 # CRDA
 PRODUCT_PACKAGES += \
@@ -83,7 +83,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.memtrack@1.0-impl
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service
 
 # Ebtables
 PRODUCT_PACKAGES += \
@@ -130,6 +131,7 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
 	android.hardware.drm@1.0-impl \
+	android.hardware.drm@1.0-service
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -177,11 +179,13 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
 	libbt-vendor \
-	android.hardware.bluetooth@1.0-impl
+	android.hardware.bluetooth@1.0-impl \
+	android.hardware.bluetooth@1.0-service
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
-	android.hardware.keymaster@3.0-impl
+	android.hardware.keymaster@3.0-impl \
+	android.hardware.keymaster@3.0-service
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -213,6 +217,7 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service \
     lights.MSM8226
 
 # Wifi
