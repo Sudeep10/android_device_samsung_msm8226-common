@@ -197,8 +197,7 @@ PRODUCT_PACKAGES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-    libsecnativefeature \
-    libcutils
+    libsecnativefeature
 
 # Ramdisk
 PRODUCT_PACKAGES += \
