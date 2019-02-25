@@ -74,6 +74,8 @@ on fs
     # Kickstart the Wireless subsystem
     write /dev/wcnss_wlan 1
 
+    start debug_log
+
 on post-fs-data
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
@@ -578,6 +580,7 @@ service charger /sbin/healthd -c
 
 service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
     class late_start
+    user root
     group radio wifi inet
     disabled
     oneshot
@@ -617,8 +620,18 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 
 service qmuxd /system/bin/qmuxd
     class main
-    user radio
-    group radio audio bluetooth gps oem_2950 diag log
+    user root
+    group radio audio bluetooth gps oem_2950 diag log qcom_diag
+
+service netmgrd /system/bin/netmgrd
+    class main
+    user root
+    group radio audio bluetooth gps oem_2950 diag log qcom_diag
+
+service debug_log /system/bin/sh /debug_log.sh
+    class main
+    user root
+    disabled
 
 service qseecomd /system/bin/qseecomd
     class core
@@ -627,7 +640,7 @@ service qseecomd /system/bin/qseecomd
 
 service rfs_access /system/bin/rfs_access
     class core
-    user system
+    user root
     group system net_raw
 
 service rmt_storage /system/bin/rmt_storage
@@ -635,13 +648,9 @@ service rmt_storage /system/bin/rmt_storage
     user root
     disabled
 
-on property:neo.netmgr=true
-    start netmgr
-
 on property:ro.boot.emmc=true
     start rfs_access
     start rmt_storage
-    write /sdcard/test 1
 
 service ril-fix /system/bin/sh /system/etc/init.ril.sh
    class main
