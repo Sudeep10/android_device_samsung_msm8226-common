@@ -37,10 +37,8 @@ PRODUCT_COPY_FILES += \
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-# FMRadio
-AUDIO_FEATURE_ENABLED_FM := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
-BOARD_HAVE_QCOM_FM := true
+# Time services
+BOARD_USES_QC_TIME_SERVICES := true
 
 # Properties (reset them here, include more in device if needed)
 TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
