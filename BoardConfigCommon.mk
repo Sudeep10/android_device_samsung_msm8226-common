@@ -47,5 +47,4 @@ TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-include device/qcom/sepolicy/legacy-sepolicy.mk
+include device/samsung/msm8226-common/sepolicy/sepolicy.mk
