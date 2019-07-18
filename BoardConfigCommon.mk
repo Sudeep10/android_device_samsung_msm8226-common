@@ -15,9 +15,9 @@
 # Inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
-VENDOR_PATH := device/samsung/msm8226-common
+VENDOR_PATH := device/samsung/msm8226-common_ms013g
 
-include device/samsung/msm8226-common/board/*.mk
+include device/samsung/msm8226-common_ms013g/board/*.mk
 
 TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 
